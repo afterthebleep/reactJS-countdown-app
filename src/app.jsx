@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import Counter from './counter'
 import './app.css';
@@ -21,7 +22,9 @@ class App extends Component {
         <div className='app-title'>
           Countdown to {this.state.deadline}
         </div>
-        <Counter />
+        <Counter
+          deadline={this.state.deadline}
+        />
         <div>
           <input
             className='input'
