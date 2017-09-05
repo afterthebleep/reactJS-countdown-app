@@ -1,11 +1,11 @@
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Counter from './counter'
-import './app.css';
+import './app.css'
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
       this.state = {
         deadline: 'March 27, 2018',
         newDeadline: ''
@@ -42,4 +42,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

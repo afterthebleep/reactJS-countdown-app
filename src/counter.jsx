@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './app.css';
+import React, { Component } from 'react'
+import './app.css'
 
 class Counter extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       days: 0,
       hours: 0,
@@ -28,13 +28,13 @@ class Counter extends Component {
   }
 
   countdownUntil(deadline) {
-    const time = Date.parse(deadline) - Date.parse(new Date());
-    const days = Math.floor(time/(1000*60*60*24));
-    const hours = Math.floor(time/(1000*60*60) % 24);
-    const minutes = Math.floor((time/1000/60) % 60);
-    const seconds = Math.floor((time/1000) % 60);
+    const time = Date.parse(deadline) - Date.parse(new Date())
+    const days = Math.floor(time/(1000*60*60*24))
+    const hours = Math.floor(time/(1000*60*60) % 24)
+    const minutes = Math.floor((time/1000/60) % 60)
+    const seconds = Math.floor((time/1000) % 60)
 
-    this.setState({days, hours, minutes, seconds});
+    this.setState({days, hours, minutes, seconds})
   }
 
     render() {
@@ -49,4 +49,4 @@ class Counter extends Component {
   }
 }
 
-export default Counter;
+export default Counter
