@@ -9,7 +9,7 @@
   font-size: 35px;
 }
 
-.days, .hours, .mins, .secs {
+.counter-days, .counter-hours, .counter-mins, .counter-secs {
   display: inline;
   margin: 10px;
 }
