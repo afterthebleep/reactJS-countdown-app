@@ -7,18 +7,36 @@ class Counter extends Component {
     this.state = {
       days: 0,
       hours: 0,
-      mins: 0,
-      secs: 0
+      minutes: 0,
+      seconds: 0
     }
+  }
+
+  componentWillMount(deadline) {
+    this.countdownUntil(this.props.deadline)
+  }
+
+  componentDidMounted(deadline) {
+    setInterval(() => this.countdownUntil(this.props.deadline), 1000)
+  }
+
+  countdownUntil(deadline) {
+    const time = Date.parse(deadline) - Date.parse(new Date());
+    const days = Math.floor(time/(1000*60*60*24));
+    const hours = Math.floor(time/(1000*60*60) % 24);
+    const minutes = Math.floor((time/1000/60) % 60);
+    const seconds = Math.floor((time/1000) % 60);
+
+    this.setState({days, hours, minutes, seconds})
   }
 
     render() {
       return (
         <div>
-          <div className='counter-days'>{this.state.days}days</div>
-          <div className='counter-hours'>{this.state.hours}hours</div>
-          <div className='counter-mins'>{this.state.mins}minutes</div>
-          <div className='counter-secs'>{this.state.secs}seconds</div>
+          <div className='counter-days'>{this.state.days} days</div>
+          <div className='counter-hours'>{this.state.hours} hours</div>
+          <div className='counter-mins'>{this.state.minutes} minutes</div>
+          <div className='counter-secs'>{this.state.seconds} seconds</div>
         </div>
       )
   }
